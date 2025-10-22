@@ -42,11 +42,16 @@ public class ProductManager {
     // part 2.1 display monthlySales using a for-each loop
 
     // for (int[] element : Product.showMonthlySales()) {
-    //   out.println(java.util.Arrays.toString(element));
+    // out.println(java.util.Arrays.toString(element));
     // }
 
     out.println(Product.showMonthlySales());
-
+    out.println("Average sales for Month 1\t: " + Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
+    // part 3.1 improvement overload
+    out.println(Product.findAverageSales(Product.getMonthlySales()[0], 1));
+    // part 3.2 weekly sales
+    out.println("Average sales for week\t: " + Product.findAverageSales(Product.getWeeklySales()));
   }
+
 
 }

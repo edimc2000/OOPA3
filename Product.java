@@ -31,6 +31,14 @@ public class Product {
         return prices;
     }
 
+    public static int[][] getMonthlySales() {
+        return monthlySales;
+    }
+    
+    public static int[] getWeeklySales() {
+        return weeklySales;
+    }
+
     // part 1.2 implementing a constructor
     Product(String productName, int productID, Double[] prices) {
         this.productName = productName;
@@ -76,6 +84,7 @@ public class Product {
 
     public static String showMonthlySales() {
         // return monthlySales;
+        // out.println(java.util.Arrays.toString(monthlySales[0]));
         String result = "Monthly Sales --------------------\n";
         int monthCount = 1;
         for (int[] element : monthlySales) {
@@ -84,6 +93,42 @@ public class Product {
             // out.println(java.util.Arrays.toString(element));
         }
         return result;
+    }
+
+    // part 3.1 
+    public static String findAverageSales(int[] array) {
+       out.println("DEBUG300 " + java.util.Arrays.toString(array));
+        Double total = 0.00;
+        for (int i = 0; i < array.length; i++) {
+          //  out.println(" i = " + array[i]);
+            total += (double) array[i];
+           // out.println(" running total = " + total);
+        }
+        return Helper.formatTwoDecimals(total / array.length);
+    }
+    // part 3.1 overload 
+    public static String findAverageSales(int[] array, int month) {
+       // out.println("DEBUG300 " + java.util.Arrays.toString(array));
+        Double total = 0.00;
+        for (int i = 0; i < array.length; i++) {
+           // out.println(" i = " + array[i]);
+            total += (double) array[i];
+           // out.println(" running total = " + total);
+        }
+        return "Average sales for Month 1\t: " + Helper.formatTwoDecimals(total / array.length);
+    }
+
+
+        // part 3.2 overload for weekly sales with period --- to be continued 
+    public static String findAverageSales(int[] array, int weekStart, int weekEnd ) {
+       // out.println("DEBUG300 " + java.util.Arrays.toString(array));
+        Double total = 0.00;
+        for (int i = 0; i < array.length; i++) {
+           // out.println(" i = " + array[i]);
+            total += (double) array[i];
+           // out.println(" running total = " + total);
+        }
+        return "Average sales for Month 1\t: " + Helper.formatTwoDecimals(total / array.length); //change this display
     }
 
 }
