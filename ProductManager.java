@@ -7,7 +7,7 @@ public class ProductManager {
   // part 1.3
   public static void main(String[] args) {
 
-    Product[] items = new Product[10]; // part 1.3 
+    Product[] items = new Product[10]; // part 1.3
 
     String[] productNamesArray = {
         "Queen Size Mattress", "Leather Sofa", "Dining Table Set",
@@ -37,7 +37,15 @@ public class ProductManager {
       out.println(items[i].displayProductInfo(i));
     }
 
-    out.println(Product.showWeeklySales());
+    // out.println(Product.showWeeklySales());
+
+    // part 2.1 display monthlySales using a for-each loop
+
+    // for (int[] element : Product.showMonthlySales()) {
+    //   out.println(java.util.Arrays.toString(element));
+    // }
+
+    out.println(Product.showMonthlySales());
 
   }
 

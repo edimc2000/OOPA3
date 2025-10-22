@@ -1,10 +1,7 @@
 package OOPA3;
 
 import static java.lang.System.out;
-
 import java.util.Arrays;
-
-
 
 public class Product {
 
@@ -16,6 +13,10 @@ public class Product {
     // part 1.5 Declare an integer array named "weeklySales" with a capacity of 40
     private static int[] weeklySales = new int[40];
 
+    // part 2.1
+    private static int[][] monthlySales = new int[3][4];
+    // private static int[][] monthlySales;
+
     // setters and getters
     public String getProductName() {
         return productName;
@@ -23,6 +24,7 @@ public class Product {
 
     public int getProductID() {
         return productID;
+
     }
 
     public Double[] getPrices() {
@@ -42,9 +44,15 @@ public class Product {
         // part 1.6 initializing weeklySales
         weeklySales = Arrays.copyOf(oneQuarterSales, weeklySales.length);
 
+        // part 2.1
+        for (int i = 0; i < 3; i++) {
+            int start = i * 4;
+            int end = start + 4;
+            monthlySales[i] = Arrays.copyOfRange(weeklySales, start, end);
+        }
+
     }
 
-    // @Override
     public String displayProductInfo(int i) {
         return "Product " + (i + 1) +
                 " --------------------------------------------" +
@@ -60,36 +68,22 @@ public class Product {
                     (i < 9 ? "0" : "") +
                     String.valueOf(i + 1) +
                     "\t: " +
-                    formatTwoDecimals(weeklySales[i]) +
+                    Helper.formatTwoDecimals(weeklySales[i]) +
                     "\n";
         }
         return result;
     }
 
-    /**
-     * Formats a decimal number to two decimal places with grouping separators.
-     * Returns a string representation of the number formatted according to the
-     * default locale's number formatting rules.
-     *
-     * @param decimal the decimal number to be formatted
-     * @return a formatted string representation of the number with two decimal
-     *         places and grouping separators (commas for thousands)
-     * 
-     * @throws IllegalArgumentException if the decimal value is NaN or infinite
-     * 
-     * @example
-     *          // Returns "1,234.56"
-     *          formatTwoDecimals(1234.56789);
-     * 
-     * @example
-     *          // Returns "0.00"
-     *          formatTwoDecimals(0.0);
-     * 
-     * @example
-     *          // Returns "999,999.99"
-     *          formatTwoDecimals(999999.9994);
-     */
-    public static String formatTwoDecimals(double decimal) {
-        return String.format("%,.2f", decimal);
+    public static String showMonthlySales() {
+        // return monthlySales;
+        String result = "Monthly Sales --------------------\n";
+        int monthCount = 1;
+        for (int[] element : monthlySales) {
+            result += " Month " + monthCount + "\t: " + java.util.Arrays.toString(element) + "\n";
+            monthCount += 1;
+            // out.println(java.util.Arrays.toString(element));
+        }
+        return result;
     }
+
 }
