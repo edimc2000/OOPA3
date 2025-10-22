@@ -4,9 +4,10 @@ import static java.lang.System.*;
 
 public class ProductManager {
 
+  // part 1.3
   public static void main(String[] args) {
 
-    Product[] items = new Product[10];
+    Product[] items = new Product[10]; // part 1.3 
 
     String[] productNamesArray = {
         "Queen Size Mattress", "Leather Sofa", "Dining Table Set",
@@ -29,20 +30,11 @@ public class ProductManager {
         { 79.99, 99.99, 119.99 } // Bar Stool - basic, padded, premium
     };
 
-    Product matress1 = new Product("Bedroom Materess", 12355, new Double[] { 66.55, 99.88, 100.33 });
-
-    // Example usage - print product information
-    out.println("Product Name: " + matress1.getProductName());
-    out.println("Product ID: " + matress1.getProductID());
-    out.println("Names\t: " + java.util.Arrays.toString(productNamesArray));
-
     for (int i = 0; i < productIDsArray.length; i++) {
-
-      // creating products based on the declared arrays
+      // part 1.3 creating products based on the sample declared arrays above
       items[i] = new Product(productNamesArray[i], productIDsArray[i], productPricesArray[i]);
-
+      // part 1.4 showing product information
       out.println(items[i].displayProductInfo(i));
-
     }
 
     out.println(Product.showWeeklySales());
