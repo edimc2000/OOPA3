@@ -73,41 +73,49 @@ public class Product {
 
     // part 1.4
     public static String displayProductInfo(Product[] array) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int counter = 1;
         for (Product product : array) {
-            result += "Product " + counter++ +
-                    "\n--------------------------------------------" +
-                    "\n Product Name\t: " + product.productName +
-                    "\n Product ID\t: " + product.productID +
-                    "\n Prices\t\t: " + java.util.Arrays.toString(product.prices) +
-                    "\n";
+            result.append(formatSingleProduct(product, counter++));
         }
-        return result;
+        return result.toString();
+    }
+
+    private static String formatSingleProduct(Product product, int number) {
+        return "Product " + number +
+                "\n--------------------------------------------" +
+                "\n Product Name\t: " + product.productName +
+                "\n Product ID\t: " + product.productID +
+                "\n Prices\t\t: " + java.util.Arrays.toString(product.prices) +
+                "\n";
     }
 
     // part 1.7
     public static String showWeeklySales() {
-        String result = "\nWeekly Sales:" +
-                "\n--------------------------------------------";
+        StringBuilder result = new StringBuilder("\nWeekly  Sales: " +
+                "\n--------------------------------------------");
         int counter = 1;
+
         for (int element : getWeeklySales()) {
-            result += "\n Week " + (counter <= 9 ? "0" : "") + counter + " \t: $" + Helper.formatTwoDecimals(element);
+            result.append("\n Week " + Helper.formatWeekNumber(counter) + " \t: $ ");
+            result.append(Helper.formatTwoDecimals(element));
             counter++;
         }
-        return result;
+        return result.toString();
+
     }
 
     // part 2.2 and display monthlySales
     public static String showMonthlySales() {
-        String result = " \nMonthly Sales:" +
-                "\n--------------------------------------------";
+        StringBuilder result = new StringBuilder("\nWeekly  Sales: " +
+                "\n--------------------------------------------");
         int monthCount = 1;
         for (int[] element : monthlySales) {
-            result += "\n Month " + monthCount + "\t: " + java.util.Arrays.toString(element);
+            result.append("\n Month " + monthCount + "\t: " +
+                    java.util.Arrays.toString(element));
             monthCount += 1;
         }
-        return result;
+        return result.toString();
     }
 
     // part 3.1 per requirement - passing standard int array
@@ -135,22 +143,24 @@ public class Product {
         for (int i = (weekStart - 1); i < (weekEnd); i++) {
             total += array[i];
         }
-        String result = "Average sales from  week " + weekStart + " to week  " + weekEnd + "\t: " +
+        return "Average sales from  week " + weekStart + " to week  " + weekEnd + "\t: " +
                 Helper.formatTwoDecimals(total / (weekEnd - weekStart + 1));
-        return result;
+
     }
 
-    // part 3.3
+    // part 3.3 Implement a method named sortPrices that takes an array of doubles
+    // as a parameter
     public static String sortPrices(Double[] array) {
-        out.println("DEBUG300 " + java.util.Arrays.toString(array));
         Arrays.sort(array);
         String result = java.util.Arrays.toString(array);
         return result;
     }
 
-    // part 4.2
+    // part 4.2 nested for-each loops to display the elements of the "matrix" array
+    // in grid format
     public static String displayMatrix(int[][] array) {
-        String result = "";
+        String result = " \nTwo-Dimensional Array:" +
+                "\n--------------------------------------------\n";
         for (int[] rowElement : array) {
             for (int element : rowElement) {
                 result += element + " ";

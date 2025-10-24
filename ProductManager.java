@@ -7,7 +7,7 @@ public class ProductManager {
   // part 1.3
   public static void main(String[] args) {
 
-    Product[] item = new Product[10]; // part 1.3
+    Product[] product = new Product[10]; // part 1.3
 
     String[] productNamesArray = {
         "Queen Size Mattress", "Leather Sofa", "Dining Table Set",
@@ -17,6 +17,8 @@ public class ProductManager {
 
     int[] productIDsArray = { 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 };
 
+    // part 4.1 Create a two-dimensional integer array named "matrix" representing a
+    // 5x5 matrix with random values.
     int[][] matrixSample = {
         { 601, 602, 603, 604, 605 },
         { 701, 702, 703, 704, 705 },
@@ -47,12 +49,12 @@ public class ProductManager {
 
     // part 1.3 creating products based on the sample declared arrays above
     for (int i = 0; i < productIDsArray.length; i++) {
-      item[i] = new Product(productNamesArray[i], productIDsArray[i],
+      product[i] = new Product(productNamesArray[i], productIDsArray[i],
           productPricesArray[i]);
     }
 
     // part 1.4 showing product information
-    out.println(Product.displayProductInfo(item));
+    out.println(Product.displayProductInfo(product));
 
     // part 1.6 Initialize the "weeklySales" array with random integer values
     // representing weekly sales for a quarter (four weeks).
@@ -78,20 +80,18 @@ public class ProductManager {
     out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 1, 4));
     out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 5, 8));
     out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 9, 12));
-    
 
-    // // Product.find
+    // part 3.4
+    Double[] sampleData = product[1].getPrices();
+    out.println("\nSorted Prices \t: " + Product.sortPrices(sampleData));
 
-    // // 3.3 sorting - part 3.4
-    // Double[] sampleData = item[1].getPrices();
-    // out.println("Sorting \t: " + Product.sortPrices(sampleData));
+    // part 4.2 display matrix array in grid format
+    out.println(Product.displayMatrix(matrixSample));
 
-    // // part 4.2
-    // // out.println(displayMatrix());
-
-    // Product.setMatrix(matrixSample);
+    // part 4.2 display matrix array in grid format using setters and getters 
+    Product.setMatrix(matrixSample);
     // out.println(Product.getMatrix()[0]);
-    // out.println(Product.displayMatrix(Product.getMatrix()));
+    out.println(Product.displayMatrix(Product.getMatrix()));
 
   }
 

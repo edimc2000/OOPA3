@@ -1,7 +1,7 @@
 package OOPA3;
 
 public class Helper {
-      
+
     /**
      * Formats a decimal number to two decimal places with grouping separators.
      * Returns a string representation of the number formatted according to the
@@ -27,5 +27,33 @@ public class Helper {
      */
     public static String formatTwoDecimals(double decimal) {
         return String.format("%,.2f", decimal);
+
     }
+
+    /**
+     * Formats a week number with leading zero for single-digit weeks.
+     * Returns a zero-padded string representation for weeks 1-9, and
+     * an empty string for weeks 10 and above.
+     *
+     * @param weekNumber the week number to format (1-based indexing)
+     * @return a string containing "0" for weeks 1-9, or empty string for weeks 10+
+     * 
+     * @throws IllegalArgumentException if weekNumber is less than 1
+     * 
+     * @example
+     *          // Returns "0"
+     *          formatWeekNumber(5);
+     * 
+     * @example
+     *          // Returns ""
+     *          formatWeekNumber(12);
+     * 
+     * @example
+     *          // Returns "0"
+     *          formatWeekNumber(9);
+     */
+    public static String formatWeekNumber(int weekNumber) {
+        return (weekNumber <= 9 ? "0" : "")+ weekNumber;
+    }
+
 }
