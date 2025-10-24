@@ -159,15 +159,15 @@ public class Product {
     // part 4.2 nested for-each loops to display the elements of the "matrix" array
     // in grid format
     public static String displayMatrix(int[][] array) {
-        String result = " \nTwo-Dimensional Array:" +
-                "\n--------------------------------------------\n";
+        StringBuilder result = new StringBuilder(" \nTwo-Dimensional Array:" +
+                "\n--------------------------------------------\n");
         for (int[] rowElement : array) {
             for (int element : rowElement) {
-                result += element + " ";
+                result.append(element + " ");
             }
-            result += "\n";
+            result.append("\n");
         }
-        return result;
+        return result.toString();
     }
 
 }
