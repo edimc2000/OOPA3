@@ -18,13 +18,7 @@ public class Product {
     // private static int[][] monthlySales;
 
     // part 4.1
-    private static int[][] matrix = {
-            { 601, 602, 603, 604, 605 },
-            { 701, 702, 703, 704, 705 },
-            { 401, 402, 403, 404, 405 },
-            { 101, 102, 103, 104, 105 },
-            { 501, 502, 503, 504, 505 },
-    };
+    private static int[][] matrix = new int[5][5];
 
     // setters and getters
     public String getProductName() {
@@ -52,49 +46,45 @@ public class Product {
         return matrix;
     }
 
+    public static void setMatrix(int[][] array) {
+        matrix = array;
+    }
+
+    public static void setWeeklySales(int[] array) {
+        // part 1.6 initializing weeklySales
+        weeklySales = Arrays.copyOf(array, array.length);
+    }
+
     // part 1.2 implementing a constructor
     Product(String productName, int productID, Double[] prices) {
         this.productName = productName;
         this.productID = productID;
         this.prices = prices;
-
-        // part 1.6 Sales for a quarter (3 months)
-        int[] oneQuarterSales = { 29802, 31567, 28451, 30289, 29123, 30876, 29745, 31234, 28679, 30555, 29321, 30987 };
-
-        // part 1.6 initializing weeklySales
-        weeklySales = Arrays.copyOf(oneQuarterSales, oneQuarterSales.length);
-
-        // Initialize arrays
-        int[] original = new int[40];
-        int[] sales = { 45, 65, 34, 85 };
-        // part 2.1
-        for (int i = 0; i < 3; i++) {
-            int start = i * 4;
-            int end = start + 4;
-            monthlySales[i] = Arrays.copyOfRange(weeklySales, start, end);
-            // Copy sales array to original starting from index 1
-            System.arraycopy(sales, 0, original, 1, 2);
-        }
-        out.println(">>>" + java.util.Arrays.toString(original));
     }
 
-    public String displayProductInfo(int i) {
-        return "Product " + (i + 1) +
-                " --------------------------------------------" +
-                "\n Product Name\t: " + productName +
-                "\n Product ID\t: " + productID +
-                "\n Prices\t\t: " + java.util.Arrays.toString(prices);
-    }
-
-    public static String showWeeklySales() {
-        String result = "Weekly Sales \n";
-        for (int i = 0; i < weeklySales.length; i++) {
-            result += " Week " +
-                    (i < 9 ? "0" : "") +
-                    String.valueOf(i + 1) +
-                    "\t: " +
-                    Helper.formatTwoDecimals(weeklySales[i]) +
+    // part 1.4
+    public static String displayProductInfo(Product[] array) {
+        String result = "";
+        int counter = 1;
+        for (Product product : array) {
+            result += "Product " + counter++ +
+                    "\n--------------------------------------------" +
+                    "\n Product Name\t: " + product.productName +
+                    "\n Product ID\t: " + product.productID +
+                    "\n Prices\t\t: " + java.util.Arrays.toString(product.prices) +
                     "\n";
+        }
+        return result;
+    }
+
+    // part 1.7
+    public static String showWeeklySales() {
+        String result = "Weekly Sales:" +
+                "\n--------------------------------------------";
+        int counter = 1;
+        for (int element : getWeeklySales()) {
+            result += "\nWeek " + (counter <= 9 ? "0" : "") + counter + " \t: $" + Helper.formatTwoDecimals(element);
+            counter++;
         }
         return result;
     }

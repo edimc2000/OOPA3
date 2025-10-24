@@ -17,6 +17,21 @@ public class ProductManager {
 
     int[] productIDsArray = { 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 };
 
+    int[][] matrixSample = {
+        { 601, 602, 603, 604, 605 },
+        { 701, 702, 703, 704, 705 },
+        { 401, 402, 403, 404, 405 },
+        { 101, 102, 103, 104, 105 },
+        { 501, 502, 503, 504, 505 },
+    };
+
+    // part 1.6 Sales for a quarter (3 months)
+    int[] oneQuarterSales = {
+        29802, 31567, 28451, 30289,
+        29123, 30876, 29745, 31234,
+        28679, 30555, 29321, 30987
+    };
+
     Double[][] productPricesArray = {
         { 499.99, 599.99, 699.99 }, // Queen Size Mattress - different firmness levels
         { 1099.99, 899.99, 1299.99 }, // Leather Sofa - different leather grades
@@ -30,45 +45,56 @@ public class ProductManager {
         { 79.99, 99.99, 119.99 } // Bar Stool - basic, padded, premium
     };
 
+    // part 1.3 creating products based on the sample declared arrays above
     for (int i = 0; i < productIDsArray.length; i++) {
-      // part 1.3 creating products based on the sample declared arrays above
-      item[i] = new Product(productNamesArray[i], productIDsArray[i], productPricesArray[i]);
-      // part 1.4 showing product information
-      out.println(item[i].displayProductInfo(i));
+      item[i] = new Product(productNamesArray[i], productIDsArray[i],
+          productPricesArray[i]);
     }
 
-    // out.println(Product.showWeeklySales());
+    // part 1.4 showing product information
+    out.println(Product.displayProductInfo(item));
 
-    // part 2.1 display monthlySales using a for-each loop
+    // part 1.6 Initialize the "weeklySales" array with random integer values
+    // representing weekly sales for a quarter (four weeks).
+    Product.setWeeklySales(oneQuarterSales);
 
-    // for (int[] element : Product.showMonthlySales()) {
-    // out.println(java.util.Arrays.toString(element));
-    // }
+    // part 1.7
+    out.println(Product.showWeeklySales());
 
-    out.println(Product.showMonthlySales());
-    out.println("Average sales for Month 1\t: " + Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
-    // // part 3.1 improvement overload
-    // out.println("/*/*/*" + java.util.Arrays.toString(Product.getMonthlySales()));
-    out.println(Product.findAverageSales(Product.getMonthlySales(), 1));
-    // out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
-    // // part 3.2 weekly sales
-    // out.println("Average sales for week\t: " +
-    // Product.findAverageSales(Product.getWeeklySales()));
-    // out.println("Average sales for week\t with range: " +
-    // Product.findAverageSales(Product.getWeeklySales(), 1, 4));
-    // out.println("Average sales for week\t with range: " +
-    out.println(Product.findAverageSales(Product.getWeeklySales(), 1, 4));
+    // // part 2.1 display monthlySales using a for-each loop
 
-    // Product.find
+    // // for (int[] element : Product.showMonthlySales()) {
+    // // out.println(java.util.Arrays.toString(element));
+    // // }
 
-    // 3.3 sorting - part 3.4
-    Double[] sampleData = item[1].getPrices();
-    out.println("Sorting \t: " + Product.sortPrices(sampleData));
+    // out.println(Product.showMonthlySales());
+    // out.println("Average sales for Month 1\t: " +
+    // Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
+    // // // part 3.1 improvement overload
+    // // out.println("/*/*/*" +
+    // java.util.Arrays.toString(Product.getMonthlySales()));
+    // out.println(Product.findAverageSales(Product.getMonthlySales(), 1));
+    // // out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
+    // // // part 3.2 weekly sales
+    // // out.println("Average sales for week\t: " +
+    // // Product.findAverageSales(Product.getWeeklySales()));
+    // // out.println("Average sales for week\t with range: " +
+    // // Product.findAverageSales(Product.getWeeklySales(), 1, 4));
+    // // out.println("Average sales for week\t with range: " +
+    // out.println(Product.findAverageSales(Product.getWeeklySales(), 1, 4));
 
-    // part 4.2
-    // out.println(displayMatrix());
-    out.println(Product.getMatrix()[0]);
-    out.println(Product.displayMatrix(Product.getMatrix()));
+    // // Product.find
+
+    // // 3.3 sorting - part 3.4
+    // Double[] sampleData = item[1].getPrices();
+    // out.println("Sorting \t: " + Product.sortPrices(sampleData));
+
+    // // part 4.2
+    // // out.println(displayMatrix());
+
+    // Product.setMatrix(matrixSample);
+    // out.println(Product.getMatrix()[0]);
+    // out.println(Product.displayMatrix(Product.getMatrix()));
 
   }
 
