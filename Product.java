@@ -15,7 +15,6 @@ public class Product {
 
     // part 2.1
     private static int[][] monthlySales = new int[3][4];
-    // private static int[][] monthlySales;
 
     // part 4.1
     private static int[][] matrix = new int[5][5];
@@ -55,6 +54,16 @@ public class Product {
         weeklySales = Arrays.copyOf(array, array.length);
     }
 
+    public static void setMonthlySales() {
+        // part 2.1
+        for (int i = 0; i < 3; i++) {
+            int start = i * 4;
+            int end = start + 4;
+            monthlySales[i] = Arrays.copyOfRange(weeklySales, start, end);
+        }
+
+    }
+
     // part 1.2 implementing a constructor
     Product(String productName, int productID, Double[] prices) {
         this.productName = productName;
@@ -79,7 +88,7 @@ public class Product {
 
     // part 1.7
     public static String showWeeklySales() {
-        String result = "Weekly Sales:" +
+        String result = "\nWeekly Sales:" +
                 "\n--------------------------------------------";
         int counter = 1;
         for (int element : getWeeklySales()) {
@@ -89,22 +98,21 @@ public class Product {
         return result;
     }
 
+    // part 2.2 and display monthlySales
     public static String showMonthlySales() {
-        // return monthlySales;
-        // out.println(java.util.Arrays.toString(monthlySales[0]));
-        String result = "Monthly Sales --------------------\n";
+        String result = "\nMonthly Sales:" +
+                "\n--------------------------------------------";
         int monthCount = 1;
         for (int[] element : monthlySales) {
-            result += " Month " + monthCount + "\t: " + java.util.Arrays.toString(element) + "\n";
+            result += " \nMonth " + monthCount + "\t: " + java.util.Arrays.toString(element);
             monthCount += 1;
-            // out.println(java.util.Arrays.toString(element));
         }
         return result;
     }
 
-    // part 3.1
+    // part 3.1 per requirement 
     public static String findAverageSales(int[] array) {
-        out.println("DEBUG300 ***  " + java.util.Arrays.toString(array));
+       
         Double total = 0.00;
         for (int i = 0; i < array.length; i++) {
             // out.println(" i = " + array[i]);
@@ -127,7 +135,7 @@ public class Product {
         return "Average sales for Month *** " + month + "\t: " + Helper.formatTwoDecimals(total / salesForMonth.length);
     }
 
-    // part 3.2 overload for weekly sales with period --- to be continued
+    // part 3.2 overload for weekly sales with period
     public static String findAverageSales(int[] array, int weekStart, int weekEnd) {
         // out.println("DEBUG1000" + " start " + weekStart+ " end " + weekEnd);
         out.println("DEBUG300 " + java.util.Arrays.toString(array));
