@@ -92,7 +92,7 @@ public class Product {
                 "\n--------------------------------------------";
         int counter = 1;
         for (int element : getWeeklySales()) {
-            result += "\nWeek " + (counter <= 9 ? "0" : "") + counter + " \t: $" + Helper.formatTwoDecimals(element);
+            result += "\n Week " + (counter <= 9 ? "0" : "") + counter + " \t: $" + Helper.formatTwoDecimals(element);
             counter++;
         }
         return result;
@@ -100,11 +100,11 @@ public class Product {
 
     // part 2.2 and display monthlySales
     public static String showMonthlySales() {
-        String result = "\nMonthly Sales:" +
+        String result = " \nMonthly Sales:" +
                 "\n--------------------------------------------";
         int monthCount = 1;
         for (int[] element : monthlySales) {
-            result += " \nMonth " + monthCount + "\t\t: " + java.util.Arrays.toString(element);
+            result += "\n Month " + monthCount + "\t: " + java.util.Arrays.toString(element);
             monthCount += 1;
         }
         return result;
