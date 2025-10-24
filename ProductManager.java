@@ -7,7 +7,7 @@ public class ProductManager {
   // part 1.3
   public static void main(String[] args) {
 
-    Product[] items = new Product[10]; // part 1.3
+    Product[] item = new Product[10]; // part 1.3
 
     String[] productNamesArray = {
         "Queen Size Mattress", "Leather Sofa", "Dining Table Set",
@@ -19,7 +19,7 @@ public class ProductManager {
 
     Double[][] productPricesArray = {
         { 499.99, 599.99, 699.99 }, // Queen Size Mattress - different firmness levels
-        { 899.99, 1099.99, 1299.99 }, // Leather Sofa - different leather grades
+        { 1099.99, 899.99, 1299.99 }, // Leather Sofa - different leather grades
         { 449.99, 549.99, 649.99 }, // Dining Table Set - 4,6,8 chairs included
         { 129.99, 179.99, 229.99 }, // Office Chair - basic, mid, premium
         { 199.99, 249.99, 299.99 }, // Bookshelf - small, medium, large
@@ -32,9 +32,9 @@ public class ProductManager {
 
     for (int i = 0; i < productIDsArray.length; i++) {
       // part 1.3 creating products based on the sample declared arrays above
-      items[i] = new Product(productNamesArray[i], productIDsArray[i], productPricesArray[i]);
+      item[i] = new Product(productNamesArray[i], productIDsArray[i], productPricesArray[i]);
       // part 1.4 showing product information
-      out.println(items[i].displayProductInfo(i));
+      out.println(item[i].displayProductInfo(i));
     }
 
     // out.println(Product.showWeeklySales());
@@ -47,11 +47,24 @@ public class ProductManager {
 
     out.println(Product.showMonthlySales());
     out.println("Average sales for Month 1\t: " + Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
-    // part 3.1 improvement overload
-    out.println(Product.findAverageSales(Product.getMonthlySales()[0], 1));
-    // part 3.2 weekly sales
-    out.println("Average sales for week\t: " + Product.findAverageSales(Product.getWeeklySales()));
-  }
+    // // part 3.1 improvement overload
+    // out.println("/*/*/*" + java.util.Arrays.toString(Product.getMonthlySales()));
+    out.println(Product.findAverageSales(Product.getMonthlySales(), 1));
+    //  out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
+    // // part 3.2 weekly sales
+    // out.println("Average sales for week\t: " +
+    // Product.findAverageSales(Product.getWeeklySales()));
+    // out.println("Average sales for week\t with range: " +
+    // Product.findAverageSales(Product.getWeeklySales(), 1, 4));
+    // out.println("Average sales for week\t with range: " +
+    out.println(Product.findAverageSales(Product.getWeeklySales(), 1, 4));
 
+    // Product.find
+
+    // 3.3 sorting
+    out.println("Sorting \t: " + java.util.Arrays.toString(item[1].getPrices()));
+    out.println("Sorting \t: " + Product.sortPrices(item[0].getPrices()));
+
+  }
 
 }
