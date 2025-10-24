@@ -61,29 +61,24 @@ public class ProductManager {
     // part 1.7
     out.println(Product.showWeeklySales());
 
-    // part 2.1 monthly sales elements 
+    // part 2.1 monthly sales elements
     Product.setMonthlySales();
     // part 2.2 and display monthlySales
     out.println(Product.showMonthlySales());
 
+    // part 3.1 findAverageSales that takes an integer array as a parameter
+    out.println("\nAverage sales for Month 1\t: " + Product.findAverageSales(Product.getMonthlySales()[0]));
 
+    // part 3.1 improvement overload, with additional params for the month
+    out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 1));
+    out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 2));
+    out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 3));
 
-
+    // part 3.2 weekly sales
+    out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 1, 4));
+    out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 5, 8));
+    out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 9, 12));
     
-    // out.println("Average sales for Month 1\t: " +
-    // Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
-    // // // part 3.1 improvement overload
-    // // out.println("/*/*/*" +
-    // java.util.Arrays.toString(Product.getMonthlySales()));
-    // out.println(Product.findAverageSales(Product.getMonthlySales(), 1));
-    // // out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
-    // // // part 3.2 weekly sales
-    // // out.println("Average sales for week\t: " +
-    // // Product.findAverageSales(Product.getWeeklySales()));
-    // // out.println("Average sales for week\t with range: " +
-    // // Product.findAverageSales(Product.getWeeklySales(), 1, 4));
-    // // out.println("Average sales for week\t with range: " +
-    // out.println(Product.findAverageSales(Product.getWeeklySales(), 1, 4));
 
     // // Product.find
 

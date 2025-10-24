@@ -110,44 +110,30 @@ public class Product {
         return result;
     }
 
-    // part 3.1 per requirement 
+    // part 3.1 per requirement - passing standard int array
     public static String findAverageSales(int[] array) {
-       
         Double total = 0.00;
-        for (int i = 0; i < array.length; i++) {
-            // out.println(" i = " + array[i]);
-            total += (double) array[i];
-            // out.println(" running total = " + total);
+        for (int element : array) {
+            total += (double) element;
         }
         return Helper.formatTwoDecimals(total / array.length);
     }
 
-    // part 3.1 overload
+    // part 3.1 improvement overload, with additional params for the month
     public static String findAverageSales(int[][] array, int month) {
-        out.println("DEBUG300 ***  " + java.util.Arrays.toString(array[month - 1]));
         int[] salesForMonth = array[month - 1];
         Double total = 0.00;
         for (int i = 0; i < salesForMonth.length; i++) {
-            // out.println(" i = " + array[i]);
             total += (double) salesForMonth[i];
-            out.println(" running total = " + total);
         }
-        return "Average sales for Month *** " + month + "\t: " + Helper.formatTwoDecimals(total / salesForMonth.length);
+        return "Average sales for Month " + month + "\t: " + Helper.formatTwoDecimals(total / salesForMonth.length);
     }
 
     // part 3.2 overload for weekly sales with period
     public static String findAverageSales(int[] array, int weekStart, int weekEnd) {
-        // out.println("DEBUG1000" + " start " + weekStart+ " end " + weekEnd);
-        out.println("DEBUG300 " + java.util.Arrays.toString(array));
         Double total = 0.00;
-        out.println("array length \t: " + (weekEnd - weekStart + 1));
-        // out.println("array start \t: " + (weekEnd - weekStart + 1));
-        // out.println("array end \t: " + (weekEnd - weekStart + 1));
-
         for (int i = (weekStart - 1); i < (weekEnd); i++) {
-            out.println("*** DEBUG1000 loop *** WEEK #  " + (i + 1) + "\t: " + array[i]);
             total += array[i];
-
         }
         String result = "Average sales from  week " + weekStart + " to week  " + weekEnd + "\t: " +
                 Helper.formatTwoDecimals(total / (weekEnd - weekStart + 1));
