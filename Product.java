@@ -104,7 +104,7 @@ public class Product {
                 "\n--------------------------------------------";
         int monthCount = 1;
         for (int[] element : monthlySales) {
-            result += " \nMonth " + monthCount + "\t: " + java.util.Arrays.toString(element);
+            result += " \nMonth " + monthCount + "\t\t: " + java.util.Arrays.toString(element);
             monthCount += 1;
         }
         return result;

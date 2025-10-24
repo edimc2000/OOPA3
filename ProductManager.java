@@ -66,6 +66,10 @@ public class ProductManager {
     // part 2.2 and display monthlySales
     out.println(Product.showMonthlySales());
 
+
+
+
+    
     // out.println("Average sales for Month 1\t: " +
     // Product.findAverageSales(Product.getMonthlySales()[0])); // part 3.1
     // // // part 3.1 improvement overload
