@@ -50,7 +50,7 @@ public class ProductManager {
     // // part 3.1 improvement overload
     // out.println("/*/*/*" + java.util.Arrays.toString(Product.getMonthlySales()));
     out.println(Product.findAverageSales(Product.getMonthlySales(), 1));
-    //  out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
+    // out.println(Product.findAverageSales(Product.getMonthlySales(), 2));
     // // part 3.2 weekly sales
     // out.println("Average sales for week\t: " +
     // Product.findAverageSales(Product.getWeeklySales()));
@@ -61,9 +61,14 @@ public class ProductManager {
 
     // Product.find
 
-    // 3.3 sorting
-    out.println("Sorting \t: " + java.util.Arrays.toString(item[1].getPrices()));
-    out.println("Sorting \t: " + Product.sortPrices(item[0].getPrices()));
+    // 3.3 sorting - part 3.4
+    Double[] sampleData = item[1].getPrices();
+    out.println("Sorting \t: " + Product.sortPrices(sampleData));
+
+    // part 4.2
+    // out.println(displayMatrix());
+    out.println(Product.getMatrix()[0]);
+    out.println(Product.displayMatrix(Product.getMatrix()));
 
   }
 

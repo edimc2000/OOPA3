@@ -17,6 +17,15 @@ public class Product {
     private static int[][] monthlySales = new int[3][4];
     // private static int[][] monthlySales;
 
+    // part 4.1
+    private static int[][] matrix = {
+            { 601, 602, 603, 604, 605 },
+            { 701, 702, 703, 704, 705 },
+            { 401, 402, 403, 404, 405 },
+            { 101, 102, 103, 104, 105 },
+            { 501, 502, 503, 504, 505 },
+    };
+
     // setters and getters
     public String getProductName() {
         return productName;
@@ -39,6 +48,10 @@ public class Product {
         return weeklySales;
     }
 
+    public static int[][] getMatrix() {
+        return matrix;
+    }
+
     // part 1.2 implementing a constructor
     Product(String productName, int productID, Double[] prices) {
         this.productName = productName;
@@ -59,10 +72,8 @@ public class Product {
             int start = i * 4;
             int end = start + 4;
             monthlySales[i] = Arrays.copyOfRange(weeklySales, start, end);
-
             // Copy sales array to original starting from index 1
             System.arraycopy(sales, 0, original, 1, 2);
-
         }
         out.println(">>>" + java.util.Arrays.toString(original));
     }
@@ -144,11 +155,24 @@ public class Product {
                 Helper.formatTwoDecimals(total / (weekEnd - weekStart + 1));
         return result;
     }
-//part 3.3 
+
+    // part 3.3
     public static String sortPrices(Double[] array) {
         out.println("DEBUG300 " + java.util.Arrays.toString(array));
         Arrays.sort(array);
         String result = java.util.Arrays.toString(array);
+        return result;
+    }
+
+    // part 4.2
+    public static String displayMatrix(int[][] array) {
+        String result = "";
+        for (int[] rowElement : array) {
+            for (int element : rowElement) {
+                result += element + " ";
+            }
+            result += "\n";
+        }
         return result;
     }
 
