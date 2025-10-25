@@ -67,6 +67,5 @@ This will output detailed product info, weekly and monthly sales reports, averag
 - Helper methods (like `Helper.formatTwoDecimals()`) are used for formatting numbers and should be defined elsewhere in the package.
 - The matrix is initialized manually in `ProductManager` and can be manipulated through the `Product` class setters/getters.
 
-## Author
-
-Developed as part of an object-oriented programming assignment focused on Java arrays, sales data processing, and class method implementation.
+## Questions
+For questions, contact Eddie or refer to course T0502 materials.
