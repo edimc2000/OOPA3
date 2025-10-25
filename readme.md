@@ -119,9 +119,7 @@ Week 04: $30,289    Week 08: $31,234    Week 12: $30,987
 
 1. **Compile the Java files:**
    ```bash
-   javac OOPA3/Helper.java
-   javac OOPA3/Product.java
-   javac OOPA3/ProductManager.java
+   javac OOPA3/*
    ```
 
 2. **Run the main program:**
@@ -168,7 +166,7 @@ Two-Dimensional Array:
 501 502 503 504 505 
 ```
 
-## Key Programming Concepts Demonstrated
+## Key Programming Concepts
 
 ### Object-Oriented Programming
 - **Encapsulation** - Private instance variables with public getters/setters
@@ -223,19 +221,10 @@ The Helper class includes validation:
 - `formatTwoDecimals()` throws IllegalArgumentException for NaN/infinite values
 - `formatWeekNumber()` throws IllegalArgumentException for invalid week numbers
 
-## Future Enhancements
-
-Potential improvements for the system:
-- Add database integration for persistent storage
-- Implement product search and filtering
-- Add graphical sales charts and visualizations
-- Include inventory tracking functionality
-- Support for custom date ranges in sales analysis
-- Export sales reports to CSV/PDF formats
 
 ## Author
 
-**Eddie**  
+**Eddie C.**  
 Date: October 24, 2025
 
 ---
@@ -260,4 +249,4 @@ public static String formatWeekNumber(int weekNumber)
 
 ## Contact
 
-For questions or issues regarding this project, please refer to the course materials or contact the instructor.
+For questions or issues regarding this project, please refer to the course materials or author.
