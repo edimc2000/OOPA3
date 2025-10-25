@@ -240,6 +240,7 @@ public static String displayMatrix(int[][] array)
 // Helper.java
 public static String formatTwoDecimals(double decimal)
 public static String formatWeekNumber(int weekNumber)
+public static String formatSingleProduct(Product product, int number)
 ```
 
 ## Contact
