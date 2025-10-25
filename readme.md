@@ -1,4 +1,4 @@
-This readme.md file has been generate with assistance from AI (Perplexity)
+This readme.md file has been generated with assistance from Perplexity AI. 
 
 # Product Management System
 
