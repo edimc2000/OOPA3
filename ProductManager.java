@@ -117,16 +117,16 @@ public class ProductManager {
     out.println("\nAverage sales for Month 1\t: " + Product.findAverageSales(Product.getMonthlySales()[0]));
 
     // part 3.1 improvement overload, with additional params for the month
-    out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 1));
-    out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 2));
+    // out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 1));
+    // out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 2));
     out.println("\n" + Product.findAverageSales(Product.getMonthlySales(), 3));
 
     // part 3.2 weekly sales
     /**
      * Calculates average sales for specific weekly periods within the quarter
      */
-    out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 1, 4));
-    out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 5, 8));
+    // out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 1, 4));
+    // out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 5, 8));
     out.println("\n" + Product.findAverageSales(Product.getWeeklySales(), 9, 12));
 
     // part 3.4

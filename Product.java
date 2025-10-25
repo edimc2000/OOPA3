@@ -153,25 +153,10 @@ public class Product {
         StringBuilder result = new StringBuilder();
         int counter = 1;
         for (Product product : array) {
-            result.append(formatSingleProduct(product, counter++));
+            result.append(Helper.formatSingleProduct(product, counter));
+            counter++;
         }
         return result.toString();
-    }
-
-    /**
-     * Formats information for a single product into a readable string.
-     * 
-     * @param product the Product object to format
-     * @param number  the sequence number of the product
-     * @return formatted string containing the product information
-     */
-    private static String formatSingleProduct(Product product, int number) {
-        return "Product " + number +
-                "\n--------------------------------------------" +
-                "\n Product Name\t: " + product.productName +
-                "\n Product ID\t: " + product.productID +
-                "\n Prices\t\t: " + java.util.Arrays.toString(product.prices) +
-                "\n";
     }
 
     // part 1.7
@@ -186,8 +171,8 @@ public class Product {
                 "\n--------------------------------------------");
         int counter = 1;
         for (int element : getWeeklySales()) {
-            result.append("\n Week " + Helper.formatWeekNumber(counter) + " \t: $ ");
-            result.append(Helper.formatTwoDecimals(element));
+            result.append("\n Week " + Helper.formatWeekNumber(counter) + " \t: $ " +
+                    Helper.formatTwoDecimals(element));
             counter++;
         }
         return result.toString();

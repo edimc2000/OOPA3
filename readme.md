@@ -1,4 +1,4 @@
-This readme.md file has been generated with assistance from Perplexity AI. 
+This readme.md file has been generated with assistance from Perplexity AI. The rest of the codes were without AI. 
 
 # Product Management System
 
@@ -215,11 +215,6 @@ OOPA3/
 - Weekly sales array has fixed capacity of 40 elements
 - Monthly sales uses efficient array partitioning (copyOfRange)
 - String operations use StringBuilder for optimal performance
-
-### Error Handling
-The Helper class includes validation:
-- `formatTwoDecimals()` throws IllegalArgumentException for NaN/infinite values
-- `formatWeekNumber()` throws IllegalArgumentException for invalid week numbers
 
 
 ## Author
